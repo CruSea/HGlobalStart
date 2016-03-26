@@ -1,0 +1,34 @@
+<h1>Add News</h1>
+<?php if (isset ($this->success)&&$this->success= true){
+    echo ('post has ben added');
+} ;?>
+<?php
+
+/**@var $form News\Form\Add  $form*/
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+
+?>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('title')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('image')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('description')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('content')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('Published_date')); ?>
+</div>
+
+<?php echo $this->formSubmit($form->get('submit')); ?>
